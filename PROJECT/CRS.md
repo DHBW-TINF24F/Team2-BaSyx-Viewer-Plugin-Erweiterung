@@ -34,6 +34,7 @@
 | :-- | :-- | :-- | :-- |
 | Amon Rizzo | 18.10.2025 | first version | 1.0 |
 | Amon Rizzo | 01.11.2025 | Restructured use cases and requirements | 1.1 |
+| Amon Rizzo | 20.04.2026 | Improved description of FR.05 | 1.1 |
 
 ***
 ## 1 Scope <a name="scope"></a>
