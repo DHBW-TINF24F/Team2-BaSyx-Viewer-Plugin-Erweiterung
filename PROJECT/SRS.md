@@ -67,7 +67,7 @@ The system provides:
 * **Search Enhancements** – recursive AAS data search.
 * **Sorting Options** – dynamic sorting by key attributes.
 * **Integrated Nameplate Generator** – automatic generation via the Digital Nameplate plugin.
-* **API Extensions** – JSON output of complete AAS data.
+* **API Extensions** – JSON output of AAS data.
 * **Improved Input Labeling** – clearer identification of Boolean fields.
 
 ### 2.3 User Characteristics <a name="23-user-characteristics"></a>
@@ -109,7 +109,7 @@ The system provides:
 | Objective      | Retrieve AAS data in JSON format via API. |
 | Precondition   | AASX file stored in system.               |
 | Postcondition  | JSON data returned.                       |
-| Trigger        | API request (`/shells`).                  |
+| Trigger        | API request                               |
 | Involved Roles | API consumer, user                        |
 
 ---
@@ -154,7 +154,7 @@ The system provides:
 | FR.002 | Sorting                         | Implement dynamic sorting of shells by key attributes.              | Must     |
 | FR.003 | Search                          | Extend search functionality recursively through AAS content.        | Must     |
 | FR.004 | Nameplate generator integration | Integrate submodule into digital nameplate plugin.                  | Must     |
-| FR.005 | API enhancements                | Extend JSON output for `/shells` endpoint.                          | Should   |
+| FR.005 | API enhancements                | Extend API output with creation and update dates.                   | Must     |
 | FR.006 | Improved labeling               | Add extra labels for Boolean values.                                | Could    |
 
 ---
@@ -214,3 +214,4 @@ Key components:
 | 0.1     | 20.10.2025 | Matti Frey & Laszlo Engemann | Initial draft based on CRS                                       |
 | 0.9     | 22.10.2025 | Matti Frey & Laszlo Engemann | Extended with structure and examples from previous SRS documents |
 | 1.0     | 24.10.2025 | Matti Frey & Laszlo Engemann | Final version for submission                                     |
+| 1.1     | 24.10.2025 | Amon Rizzo | Made descriptions pertaining to the API more accurate                              |
