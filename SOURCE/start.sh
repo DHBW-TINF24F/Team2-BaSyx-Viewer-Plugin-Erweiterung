@@ -3,9 +3,15 @@ set -euo pipefail
 
 ROOT="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
-echo "Starting backend..."
-cd "$ROOT/aas-test-backend"
-docker compose up -d
+read -r -p "Do you want to use a custom backend? (y/N) " custom_backend
+cd "$ROOT/aas-test-backend" 
+
+if [ "$custom_backend" = "y" ]; then
+  echo "Using custom configuration..."
+  docker compose -f docker-compose.custom.yaml up -d
+else
+  docker compose up -d
+fi
 
 cd "$ROOT/aas-web-ui"
 
