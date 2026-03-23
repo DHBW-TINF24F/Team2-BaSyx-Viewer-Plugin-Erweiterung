@@ -45,3 +45,15 @@ requirements:
 - Git
 
 To build the backend and frontend simultaneously, use the `Team2-BaSyx-Viewer-Plugin-Erweiterung/SOURCE/start.sh` (for Linux/macOS) or `Team2-BaSyx-Viewer-Plugin-Erweiterung/SOURCE/start.bat` (for Windows). This starts a Docker image. To stop it again, use `docker-compose down`.
+
+
+# Backend Build NEED RIGHT BRANCH
+1. cd aas4j
+mvn clean install -DskipTests
+
+2. cd ./basyx-java-server-sdk/basyx.aasenvironment/basyx.aasenvironment.component
+mvn clean install -DskipTests
+mvn spring-boot:run
+
+3. cd SOURCE 
+./start.sh
