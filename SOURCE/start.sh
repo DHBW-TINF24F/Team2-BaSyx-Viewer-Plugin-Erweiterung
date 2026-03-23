@@ -15,7 +15,7 @@ if [ "$custom_backend" = "y" ]; then
 
   read -r -p "Do you want to rebuild mvn? (y/N) " mvn
   if [ "$mvn" = "y" ]; then
-    cd "$ROOT/aas-backend-environment"
+    cd "$ROOT/aas-backend-environment/basyx.aasenvironment"
     mvn clean install -DskipTests 
 
     cd "$ROOT/aas-backend-environment/basyx.aasenvironment/basyx.aasenvironment.component"
