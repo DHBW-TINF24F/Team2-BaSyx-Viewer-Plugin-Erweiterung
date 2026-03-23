@@ -8,18 +8,20 @@ cd "$ROOT/aas-test-backend"
 
 if [ "$custom_backend" = "y" ]; then
   echo "Using custom configuration..."
+  cd "$ROOT/aas-test-backend" 
+  docker compose -f docker-compose.custom.yaml up -d
+
+
   echo "Springing the boot"
   cd "$ROOT/aas-backend-environment/basyx.aasenvironment/basyx.aasenvironment.component"
 
   read -r -p "Do you want to rebuild mvn? (y/N) " mvn
   if [ "$mvn" = "y" ]; then
-    mvn clean install -DskipTests
+    mvn clean install -DskipTests 
   fi
 
-  mvn spring-boot:run
+  mvn spring-boot:run &
 
-  cd "$ROOT/aas-test-backend" 
-  docker compose -f docker-compose.custom.yaml up -d
 else
   docker compose up -d
 fi
