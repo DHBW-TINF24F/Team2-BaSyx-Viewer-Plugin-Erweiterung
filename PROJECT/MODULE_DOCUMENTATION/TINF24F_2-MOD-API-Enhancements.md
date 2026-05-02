@@ -3,7 +3,7 @@
 **Project:** BaSyx Viewer Plugin Extension  
 **Module:** CreatedAt and UpdatedAt support  
 **Team:** Team 2  
-**Role owner:** Manuel Sposato (Project Leader / Feature Lead)  
+**Role owner:** Amon Rizzo (Product manager) & Jakob Pauls (Systems Architect) 
 **Date:** 2026-05-02 
 **Status:** Draft v1.0 
 
@@ -26,7 +26,8 @@
 
 | Version | Date       | Author         | Notes                                                                 |
 |---------|------------|----------------|-----------------------------------------------------------------------|
-| 1.0     | 2026-05-01 | Amon Rizzo | Initial Draft for CreatedAt and UpdatedAt support in API |
+| 1.0     | 2026-05-02 | Amon Rizzo | Initial Draft for CreatedAt and UpdatedAt support in API |
+| 1.1     | 2026-05-02 | Amon Rizzo | Added refferences |
 
 ---
 
@@ -34,13 +35,13 @@
 
 ### 1.1 Purpose
 
-This Module Documentation (MOD) describes the **API CreatedAt and UpdatedAt support** implemented as part of the BaSyx Viewer Plugin Extension. It explains the behavior of these fields.
+This Module Documentation (MOD) describes the **API CreatedAt and UpdatedAt support** implemented as part of the BaSyx Viewer Plugin Extension. This module implements [FR.005](../SRS.md#44-fr005--createdat-and-updatedat-support) (CreatedAt and UpdatedAt support) and supports [UC02](../CRS.md#uc02) (Access AAS Data as JSON via API). It explains the behavior of these fields.
 
 The intended readers are developers, testers, and project owners who want to understand how the generation pipeline is triggered and how the backend API serves the frontend component.
 
 ### 1.2 Scope
 
-The scope of this change is the definition of the CreatedAt and UpdatedAt fields throughout the backend, API and viewer. Like defined in the [specification](https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.2/spec-metamodel/common.html)
+The scope of this change is the definition of the CreatedAt and UpdatedAt fields throughout the backend, API and viewer as defined in [FR.005](../SRS.md#44-fr005--createdat-and-updatedat-support) and the [specification](https://industrialdigitaltwin.io/aas-specifications/IDTA-01001/v3.2/spec-metamodel/common.html).
 
 ### 1.3 Definitions, Acronyms, Abbreviations
 

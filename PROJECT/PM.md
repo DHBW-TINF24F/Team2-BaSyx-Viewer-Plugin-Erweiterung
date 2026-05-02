@@ -37,6 +37,7 @@
 |--------------|-----------|--------------|-------------|
 | 0.1 | 19.10.2025 | Document created | Manuel Sposato |
 | 1.0 | 24.10.2025 | Document completed | Manuel Sposato |
+| 1.1 | 02.5.2026 | Added references | Amon Rizzo |
 
 ---
 
@@ -44,8 +45,8 @@
 
 ### Project Objective (Output)
 
-Development of a BaSyx Viewer Extension that enhances usability and performance by improving filtering, sorting, and visualization of digital nameplates and related submodels.  
-Additionally, the system will integrate new REST API functionalities for more dynamic data access.
+Development of a BaSyx Viewer Extension that enhances usability and performance by improving [filtering](SRS.md#42-fr003--search) ([FR.003]), [sorting](SRS.md#41-fr002--sorting-of-aas-shells) ([FR.002]), and [visualization of digital nameplates](SRS.md#43-fr004--nameplate-generator-integration) ([FR.004]) and related submodels.  
+Additionally, the system will integrate new [REST API functionalities](SRS.md#44-fr005--createdat-and-updatedat-support) ([FR.005]) for more dynamic data access.
 
 ### Non-Objectives
 
