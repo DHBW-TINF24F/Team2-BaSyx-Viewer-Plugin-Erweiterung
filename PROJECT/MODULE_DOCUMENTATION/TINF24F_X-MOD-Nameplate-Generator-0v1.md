@@ -19,14 +19,6 @@
 - [2. Module: Nameplate Generator & Exporter](#2-module-nameplate-generator--exporter)
   - [2.1 Overview](#21-overview)
   - [2.2 User Flow](#22-user-flow)
-  - [2.3 Architecture & File Structure](#23-architecture--file-structure)
-  - [2.4 Key Components](#24-key-components)
-  - [2.5 Data Flow](#25-data-flow)
-  - [2.6 Error Handling](#26-error-handling)
-- [3. Setup & Run Instructions](#3-setup--run-instructions)
-  - [3.1 Critical Backend Initialization](#31-critical-backend-initialization)
-- [4. Module Tests](#4-module-tests)
-- [5. Known Limitations](#5-known-limitations)
 
 ---
 
@@ -35,6 +27,7 @@
 | Version | Date       | Author         | Notes                                                                 |
 |---------|------------|----------------|-----------------------------------------------------------------------|
 | 1.0     | 2026-05-01 | Manuel Sposato | Initial Draft for Nameplate Generator implementation & UI integration |
+| 1.1     | 2026-05-01 | Amon Rizzo | Added references |
 
 ---
 
@@ -42,7 +35,7 @@
 
 ### 1.1 Purpose
 
-This Module Documentation (MOD) describes the **Digital Nameplate Generator & Exporter** feature implemented as part of the BaSyx Viewer Plugin Extension. It explains how a standalone Nameplate Generator backend (adopted from a previous development group) was successfully integrated, modified, and connected to the BaSyx Vue.js frontend.
+This Module Documentation (MOD) describes the **Digital Nameplate Generator & Exporter** feature implemented as part of the BaSyx Viewer Plugin Extension. This module implements [FR.004](../SRS.md#43-fr004--nameplate-generator-integration) (Nameplate generator integration) and supports [UC03](../CRS.md#uc03) (Generate a Digital Nameplate). It explains how a standalone Nameplate Generator backend (adopted from a previous development group) was successfully integrated, modified, and connected to the BaSyx Vue.js frontend.
 
 The intended readers are developers, testers, and project owners who want to understand how the generation pipeline is triggered and how the backend API serves the frontend component.
 

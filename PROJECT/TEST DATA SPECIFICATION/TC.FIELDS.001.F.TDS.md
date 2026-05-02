@@ -6,7 +6,7 @@
 
 ## 1. Description
 
-This document defines the input datasets used to validate the correct handling and display of `createdAt` and `updatedAt` fields in the AAS Web UI.
+This document defines the input datasets used to validate the correct handling and display of `createdAt` and `updatedAt` fields in the AAS Web UI, as specified in [FR.005](../SRS.md#44-fr005--createdat-and-updatedat-support).
 
 ---
 

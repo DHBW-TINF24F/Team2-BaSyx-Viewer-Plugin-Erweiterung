@@ -31,7 +31,7 @@
 ---
 
 ## 1. Purpose and Scope   <a name="scope"></a>
-This project is mainly about improving the usability of the BaSyx Viewer ([Github](https://github.com/DHBW-TINF24F/Team2-BaSyx-Viewer-Plugin-Erweiterung/tree/main)). For example features like sorting/filtering a AAS list and integrate a submodule, which generates nameplates, into the Plugin submodule "Digital Nameplate". Furthermore Optimization of the rendering of pictures should be improvet. Excat Information is to be found in the Software Requirements Specification.
+This project is mainly about improving the usability of the BaSyx Viewer ([Github](https://github.com/DHBW-TINF24F/Team2-BaSyx-Viewer-Plugin-Erweiterung/tree/main)). For example features like [sorting](SRS.md#41-fr002--sorting-of-aas-shells)/[filtering](SRS.md#42-fr003--search) a AAS list and integrate a submodule, which [generates nameplates](SRS.md#43-fr004--nameplate-generator-integration), into the Plugin submodule "Digital Nameplate". Furthermore Optimization of the rendering of pictures should be improvet. Excat Information is to be found in the Software Requirements Specification.
 
 The scope includes concept design, implementation, testing, and documentation of the new features, leading to a fully functional *inimal Viable Product (MVP) for demonstration and future reuse in industrial environments.
 
@@ -41,9 +41,9 @@ The scope includes concept design, implementation, testing, and documentation of
 
 | **Value** | **Description** |
 |------------|----------------|
-| **Improved Usability** | Enhanced filtering and sorting simplify the interaction with large AAS datasets. |
+| **Improved Usability** | Enhanced [filtering](SRS.md#42-fr003--search) and [sorting](SRS.md#41-fr002--sorting-of-aas-shells) simplify the interaction with large AAS datasets ([FR.002], [FR.003]). |
 | **Maintainability** | Modular structure and clear code design simplify future extensions and debugging. |
-| **REST API Enhancements** | The extended API provides more flexible data access, allowing integration with external systems, dashboards, and automated analysis tools. |
+| **REST API Enhancements** | The extended API ([FR.005](SRS.md#44-fr005--createdat-and-updatedat-support)) provides more flexible data access, allowing integration with external systems, dashboards, and automated analysis tools. |
 | **Better Performance and Efficiency** | Optimized rendering and lazy loading reduce system load and improve response times, even with large amounts of data. |
 
 ---
