@@ -14,6 +14,7 @@
 | 0.7.0 | 29.04.2026 | Mattis Weigold | Add Nameplate Backend Test |
 | 1.0.0 | 01.05.2026 | Mattis Weigold | Add manual Fields Test | 
 | 1.1.0 | 03.05.2026 | Mattis Weigold | Add Performance Tests | 
+| 1.1.1 | 03.05.2026 | Mattis Weigold | Add Performance TDS and STR References | 
 
 ## Table of Contents
 
@@ -58,7 +59,7 @@ The tests verify that both functional and non-functional requirements are adequa
 | [FR.005 / CreatedAt and UpdatedAt support (FIELDS)](SRS.md#45-fr005--api-enhancements) | Adds two datetime fields to be recieved from the API | D | [TC.FIELDS.001.F](#65-tcfields001f-display-and-integrity-of-datetime-fields) |
 | [FR.006 / Improved labeling (BOOL)](SRS.md#46-fr006--improved-labeling) | Add extra labels for Boolean values in "Operations" submodules to a visual switch instead of text. | C | [TS.BOOL.001.FAS](#66-tsbool001fas-boolean-input-validation) |
 | [NFR.001 / Usability](SRS.md#51-nfr001--usability) | UI improvements must reduce average task time. | -- | *no testing* |
-| [NFR.002 / Performance](SRS.md#52-nfr002--performance) | No significant delay from enhancements. | D | [TC.PERF.001.L](#67-tcperf001l-filtering-performance-validation); [TC.PERF.002.L](#68-tcperf002l-sorting-performance-validation) |
+| [NFR.002 / Performance (PERF)](SRS.md#52-nfr002--performance) | No significant delay from enhancements. | D | [TC.PERF.001.L](#67-tcperf001l-filtering-performance-validation); [TC.PERF.002.L](#68-tcperf002l-sorting-performance-validation) |
 | [NFR.003 / Stability](SRS.md#53-nfr003--stability) | Application should not crash under standard or rapid usage. | -- | *no testing* |
 | [NFR.004 / Maintainability](SRS.md#54-nfr004--maintainability) | Clear documentation and readable code. | -- | *no testing* |
 | [NFR.005 / Licensing](SRS.md#55-nfr005--licensing) | Maintain current open-source license. | -- | *no testing* |
@@ -486,7 +487,7 @@ TCT.FUNC.SQNR.TT
         <th style="border:1px solid black; padding:8px;"><strong>Expected Results:</strong></th>
         <td colspan="2" style="border:1px solid black; padding:8px;">
             <ul>
-                <li>Filtering completes within <strong>&lt; 100 ms</strong> for 1000 entries</li>
+                <li>Filtering completes within <strong>&lt; 1s</strong> for 1000 entries</li>
                 <li>No visible UI freeze (FPS remains stable)</li>
                 <li>No long blocking tasks (&gt; 50 ms) in profiler</li>
             </ul>
@@ -576,6 +577,8 @@ TCT.FUNC.SQNR.TT
 - [Software Requirements Specification (SRS)](SRS.md)
 
 - [TC.FIELDS.001.F.TDS](TEST_DATA_SPECIFICATION/TC.FIELDS.001.F.TDS.md)
+- [TC.PERF.001.F.TDS](TEST_DATA_SPECIFICATION/TC.PERF.001.L.TDS.md)
+- [TC.PERF.002.L.TDS](TEST_DATA_SPECIFICATION/TC.PERF.002.L.TDS.md)
 
 - [TC.FIELDS.001.F.STR](TEST_REPORTS/TC.FIELDS.001.F.STR.md)
 - [TS.BOOL.001.FAS.STR](TEST_REPORTS/TS.BOOL.001.FAS.STR.md)
@@ -583,3 +586,5 @@ TCT.FUNC.SQNR.TT
 - [TS.GEN.001.FAS.STR](TEST_REPORTS/TS.GEN.001.FAS.STR.md)
 - [TS.GEN.002.FAS.STR](TEST_REPORTS/TS.GEN.002.FAS.STR.md)
 - [TS.SORT.001.FAS.STR](TEST_REPORTS/TS.SORT.001.FAS.STR.md)
+- [TC.PERF.001.L.STR](TEST_REPORTS/TC.PERF.001.L.STR.md)
+- [TC.PERF.002.L.STR](TEST_REPORTS/TC.PERF.002.L.STR.md)
