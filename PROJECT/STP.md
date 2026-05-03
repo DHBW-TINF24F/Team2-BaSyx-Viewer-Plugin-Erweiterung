@@ -13,6 +13,7 @@
 | 0.6.0 | 28.04.2026 | Mattis Weigold | Redo Boolean Input Section |
 | 0.7.0 | 29.04.2026 | Mattis Weigold | Add Nameplate Backend Test |
 | 1.0.0 | 01.05.2026 | Mattis Weigold | Add manual Fields Test | 
+| 1.1.0 | 03.05.2026 | Mattis Weigold | Add Performance Tests | 
 
 ## Table of Contents
 
@@ -55,10 +56,10 @@ The tests verify that both functional and non-functional requirements are adequa
 | [FR.003 / Filtering (FLTR)](SRS.md#43-fr003--search) | Add Filters for searching shells. | A | [TS.FLTR.001.FAS](#62-tsfltr001fas-aas-filtering-validation) |
 | [FR.004 / Nameplate generator integration (GEN)](SRS.md#44-fr004--nameplate-generator-integration) | Integrate submodule into digital nameplate plugin. | B | [TS.GEN.001.FAS](#63-tsgen001fas-correct-frontend-communication-for-nameplate-generator); [TS.GEN.002.FAS](#64-tsgen002fas-correct-backend-communication-for-nameplate-generator) |
 | [FR.005 / CreatedAt and UpdatedAt support (FIELDS)](SRS.md#45-fr005--api-enhancements) | Adds two datetime fields to be recieved from the API | D | [TC.FIELDS.001.F](#65-tcfields001f-display-and-integrity-of-datetime-fields) |
-| [FR.006 / Improved labeling](SRS.md#46-fr006--improved-labeling) | Add extra labels for Boolean values in "Operations" submodules to a visual switch instead of text. | C | [TS.BOOL.001.FAS](#66-tsbool001fas-boolean-input-validation) |
+| [FR.006 / Improved labeling (BOOL)](SRS.md#46-fr006--improved-labeling) | Add extra labels for Boolean values in "Operations" submodules to a visual switch instead of text. | C | [TS.BOOL.001.FAS](#66-tsbool001fas-boolean-input-validation) |
 | [NFR.001 / Usability](SRS.md#51-nfr001--usability) | UI improvements must reduce average task time. | -- | *no testing* |
-| [NFR.002 / Performance](SRS.md#52-nfr002--performance) | No significant delay from enhancements. | D | *no testing* |
-| [NFR.003 / Stability](SRS.md#53-nfr003--stability) | Application should not crash under standard or rapid usage. | C | *no testing* |
+| [NFR.002 / Performance](SRS.md#52-nfr002--performance) | No significant delay from enhancements. | D | [TC.PERF.001.L](#67-tcperf001l-filtering-performance-validation); [TC.PERF.002.L](#68-tcperf002l-sorting-performance-validation) |
+| [NFR.003 / Stability](SRS.md#53-nfr003--stability) | Application should not crash under standard or rapid usage. | -- | *no testing* |
 | [NFR.004 / Maintainability](SRS.md#54-nfr004--maintainability) | Clear documentation and readable code. | -- | *no testing* |
 | [NFR.005 / Licensing](SRS.md#55-nfr005--licensing) | Maintain current open-source license. | -- | *no testing* |
 
@@ -421,6 +422,164 @@ TCT.FUNC.SQNR.TT
   </tr>
 </table>
 
+### 6.7 <TC.PERF.001.L> Filtering Performance Validation
+<table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif;">
+    <tr>
+        <th colspan="3" style="border:1px solid black; padding:8px; text-align:center;"> Test Case </th>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>ID:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;">&lt;TC.PERF.001.L&gt;</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Name:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;"> Filtering Performance Validation </td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Req.-ID:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;"> NFR.002 </td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Description:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;"> This test verifies that filtering AAS entries
+            performs within acceptable time limits under realistic and large dataset conditions. </td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Preconditions:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;">
+            <ul>
+                <li>System is running</li>
+                <li>Dataset with at least <strong>1000 AAS entries</strong> is loaded</li>
+                <li>Browser developer tools (Performance profiler) is
+                    available</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="3" style="border:1px solid black; padding:8px; text-align:center;"> Test Steps </th>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">1</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Open AAS list view and ensure all entries are
+            loaded </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">2</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Start performance recording using browser profiler
+            (e.g. Firefox Performance tab or :contentReference[oaicite:0]{index=0}) </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">3</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Enter a search term into the filter input field
+            (e.g. "pump") </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">4</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Stop recording after results are updated </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">5</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Measure time between input event and DOM update
+            completion </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;"><strong>Expected Results:</strong></th>
+        <td colspan="2" style="border:1px solid black; padding:8px;">
+            <ul>
+                <li>Filtering completes within <strong>&lt; 100 ms</strong> for 1000 entries</li>
+                <li>No visible UI freeze (FPS remains stable)</li>
+                <li>No long blocking tasks (&gt; 50 ms) in profiler</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;"><strong>Pass Criteria:</strong></th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> All thresholds are met consistently across
+            multiple runs </td>
+    </tr>
+</table>
+
+### 6.8 <TC.PERF.002.L> Sorting Performance Validation
+<table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif;">
+    <tr>
+        <th colspan="3" style="border:1px solid black; padding:8px; text-align:center;"> Test Case </th>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>ID:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;">&lt;TC.PERF.002.L&gt;</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Name:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;"> Sorting Performance Validation </td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Req.-ID:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;"> NFR.002 </td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Description:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;"> This test verifies that sorting operations on AAS
+            entries execute efficiently without noticeable delay. </td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black; padding:8px;"><strong>Preconditions:</strong></td>
+        <td colspan="3" style="border:1px solid black; padding:8px;">
+            <ul>
+                <li>Dataset with at least <strong>1000 AAS entries</strong></li>
+                <li>UI fully loaded</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="3" style="border:1px solid black; padding:8px; text-align:center;"> Test Steps </th>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">1</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Open AAS list view </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">2</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Start performance recording </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">3</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Apply sorting (e.g. sort by name ascending) </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">4</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Stop recording after list re-renders </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;">5</th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Measure time from user interaction to DOM update
+        </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;"><strong>Expected Results:</strong></th>
+        <td colspan="2" style="border:1px solid black; padding:8px;">
+            <ul>
+                <li>Sorting completes within <strong>&lt; 50 ms</strong></li>
+                <li>No UI stutter or lag</li>
+                <li>No excessive re-rendering observed</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th style="border:1px solid black; padding:8px;"><strong>Pass Criteria:</strong></th>
+        <td colspan="2" style="border:1px solid black; padding:8px;"> Sorting consistently meets performance thresholds
+        </td>
+    </tr>
+</table>
+
 ## 7. References
 
 - [Software Requirements Specification (SRS)](SRS.md)
+
+- [TC.FIELDS.001.F.TDS](TEST_DATA_SPECIFICATION/TC.FIELDS.001.F.TDS.md)
+
+- [TC.FIELDS.001.F.STR](TEST_REPORTS/TC.FIELDS.001.F.STR.md)
+- [TS.BOOL.001.FAS.STR](TEST_REPORTS/TS.BOOL.001.FAS.STR.md)
+- [TS.FLTR.001.FAS.STR](TEST_REPORTS/TS.FLTR.001.FAS.STR.md)
+- [TS.GEN.001.FAS.STR](TEST_REPORTS/TS.GEN.001.FAS.STR.md)
+- [TS.GEN.002.FAS.STR](TEST_REPORTS/TS.GEN.002.FAS.STR.md)
+- [TS.SORT.001.FAS.STR](TEST_REPORTS/TS.SORT.001.FAS.STR.md)
