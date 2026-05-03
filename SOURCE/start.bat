@@ -37,9 +37,9 @@ cd /d "%ROOT%aas-test-backend\nameplate-generator-backend"
 rmdir /s /q node_modules 2>nul
 start "BaSyxNameplateGenerator" /b cmd /c "npm start >nul 2>&1"
 
-cd "%ROOT%\aas-web-ui"
+cd /d "%ROOT%aas-web-ui"
 echo Starting frontend...
-yarn dev
+call yarn run dev
 
 echo Stopping backend services...
 taskkill /FI "WINDOWTITLE eq BaSyxMaven*" /T /F
