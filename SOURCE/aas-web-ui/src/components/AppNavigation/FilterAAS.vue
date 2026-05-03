@@ -84,7 +84,7 @@
                 <v-list-item>
                     <v-text-field
                         v-model="filters.orderCodeOfManufacturer"
-                        label="Order Code Of Manufacturer"
+                        label="Order Code"
                         density="compact"
                         hide-details
                         class="mt-1"
@@ -93,7 +93,7 @@
                 <v-list-item>
                     <v-text-field
                         v-model="filters.productArticleNumberOfManufacturer"
-                        label="Product Article Number Of Manufacturer"
+                        label="Product Article Number"
                         density="compact"
                         hide-details
                         class="mt-1"
@@ -124,21 +124,11 @@
 
 <script setup lang="ts">
     import { reactive, ref, watch } from 'vue';
+    import type { AASAttributeFilters } from '@/types/AASFilters';
 
     interface AASAttributeSortValues {
         sortField: number;
         sortDirection: string;
-    }
-
-    interface AASAttributeFilters {
-        manufacturerName: string;
-        manufacturerProductDesignation: string;
-        manufacturerProductFamily: string;
-        manufacturerProductType: string;
-        orderCodeOfManufacturer: string;
-        productArticleNumberOfManufacturer: string;
-        productClassificationSystem: string;
-        productClassId: string;
     }
 
     const emit = defineEmits<{

@@ -334,21 +334,11 @@
     import { useInfrastructureStore } from '@/store/InfrastructureStore';
     import { useNavigationStore } from '@/store/NavigationStore';
     import { debounce } from '@/utils/generalUtils';
+    import type { AASAttributeFilters } from '@/types/AASFilters';
 
     // Extend the ComponentPublicInstance type to include scrollToIndex
     interface VirtualScrollInstance extends ComponentPublicInstance {
         scrollToIndex: (index: number) => void;
-    }
-
-    interface AASAttributeFilters {
-        manufacturerName: string;
-        manufacturerProductDesignation: string;
-        manufacturerProductFamily: string;
-        manufacturerProductType: string;
-        orderCodeOfManufacturer: string;
-        productArticleNumberOfManufacturer: string;
-        productClassificationSystem: string;
-        productClassId: string;
     }
 
     // Vue Router
