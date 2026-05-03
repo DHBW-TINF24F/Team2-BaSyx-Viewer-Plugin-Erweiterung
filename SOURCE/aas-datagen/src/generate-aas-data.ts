@@ -22,6 +22,8 @@ function generateAAS(index: number) {
     const productType = randomItem(productTypes);
     const family = randomItem(families);
 
+    const submodelId = `submodel-nameplate-${index}`;
+
     return {
         assetAdministrationShells: [
             {
@@ -32,18 +34,31 @@ function generateAAS(index: number) {
                 },
                 submodels: [
                     {
-                        idShort: 'Nameplate',
-                        submodelElements: [
-                            { idShort: 'ManufacturerName', value: manufacturer },
-                            { idShort: 'ManufacturerProductDesignation', value: `${productType}-${index}` },
-                            { idShort: 'ManufacturerProductFamily', value: family },
-                            { idShort: 'ManufacturerProductType', value: productType },
-                            { idShort: 'OrderCodeOfManufacturer', value: `ORD-${index}` },
-                            { idShort: 'ProductArticleNumberOfManufacturer', value: `ART-${index}` },
-                            { idShort: 'ProductClassificationSystem', value: randomItem(classificationSystems) },
-                            { idShort: 'ProductClassId', value: `CLS-${index % 50}` },
+                        type: 'ModelReference',
+                        keys: [
+                            {
+                                type: 'Submodel',
+                                value: submodelId,
+                            },
                         ],
                     },
+                ],
+            },
+        ],
+        submodels: [
+            {
+                id: submodelId,
+                kind: "Instance",
+                idShort: 'Nameplate',
+                submodelElements: [
+                    { modelType: 'Property', idShort: 'ManufacturerName', value: manufacturer, valueType: "string" },
+                    { modelType: 'Property', idShort: 'ManufacturerProductDesignation', value: `${productType}-${index}`, valueType: "string" },
+                    { modelType: 'Property', idShort: 'ManufacturerProductFamily', value: family, valueType: "string" },
+                    { modelType: 'Property', idShort: 'ManufacturerProductType', value: productType, valueType: "string" },
+                    { modelType: 'Property', idShort: 'OrderCodeOfManufacturer', value: `ORD-${index}`, valueType: "string" },
+                    { modelType: 'Property', idShort: 'ProductArticleNumberOfManufacturer', value: `ART-${index}`, valueType: "string" },
+                    { modelType: 'Property', idShort: 'ProductClassificationSystem', value: randomItem(classificationSystems), valueType: "string" },
+                    { modelType: 'Property', idShort: 'ProductClassId', value: `CLS-${index % 50}`, valueType: "string" },
                 ],
             },
         ],
