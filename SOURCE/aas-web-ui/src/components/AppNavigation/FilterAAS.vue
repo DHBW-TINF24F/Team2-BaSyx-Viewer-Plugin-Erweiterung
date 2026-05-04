@@ -93,7 +93,7 @@
                 <v-list-item>
                     <v-text-field
                         v-model="filters.productArticleNumberOfManufacturer"
-                        label="Product Article Number"
+                        label="Article Number"
                         density="compact"
                         hide-details
                         class="mt-1"
@@ -102,7 +102,7 @@
                 <v-list-item>
                     <v-text-field
                         v-model="filters.productClassificationSystem"
-                        label="Product Classification System"
+                        label="Classification System"
                         density="compact"
                         hide-details
                         class="mt-1"
@@ -111,7 +111,7 @@
                 <v-list-item>
                     <v-text-field
                         v-model="filters.productClassId"
-                        label="Product Class Id"
+                        label="Class Id"
                         density="compact"
                         hide-details
                         class="mt-1"
