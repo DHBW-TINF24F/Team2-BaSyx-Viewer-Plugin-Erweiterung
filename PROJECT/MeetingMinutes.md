@@ -443,3 +443,42 @@ Create issues in OG repository and start pull requests
 
 *Prepared by:* Manuel Sposato  
 *Last updated:* 24.04.2026
+
+### Week 13 – 08.05.2026
+
+**Time:** 10.00-11.10
+**Attendees:** Manuel, Amon, Laszlo, Matti, Mattis, Jakob, David
+**Moderator:** Manuel Sposato
+**Location:** On-site meeting at the university
+
+---
+
+#### Focus
+
+Everything is finished. Tie everything up and create Presentation
+Check all requirements for this Friday
+---
+
+#### Discussion Points
+
+---
+
+#### Decisions
+
+Last pull requests are created on OG repository
+Presentation responsibilites are assigned
+
+---
+
+#### Next Meeting
+**Date:** 15.05.2026
+**Agenda:**
+
+Presentation planning
+
+---
+
+# Please note that this will be the last update, as there will be no more meetings and protocols will be turned in this friday.
+
+*Prepared by:* Manuel Sposato  
+*Last updated:* 12.05.2026
