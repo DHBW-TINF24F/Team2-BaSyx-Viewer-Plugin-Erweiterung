@@ -169,7 +169,8 @@ _Picture 1: WBS_
 ---
 
 ## 8. Gantt Chart
-<img width="1798" height="844" alt="GANTTFINAL" src="https://github.com/user-attachments/assets/029dc5c7-307e-482a-81c2-a3ae3228b52c" />
+<img width="1555" height="739" alt="Screenshot 2026-05-14 112559" src="https://github.com/user-attachments/assets/dde656d1-a5dc-4135-adbe-44078191de31" />
+
 
 _Picture 2: Gantt-Diagram_
 
