@@ -190,6 +190,7 @@ The API now includes:
 - `updatedAt`
 
 These metadata fields are used in the frontend to support sorting and filtering of loaded AAS shells.
+The development of this feature was also done in https://github.com/amon1220/basixBackup for safety because it wasn't clear at the time how the 2 extra repos interact with the viewer.
 
 In addition, users can filter shells by relevant asset and product information, such as:
 
