@@ -101,7 +101,7 @@ The following features were implemented as part of this project.
 
 ---
 
-## ↕️ FR02 / FR.002 – Attribute-Based Sorting
+## ↕️ [FR02 / FR.002 – Attribute-Based Sorting](PROJECT/CRS.md#fr02)
 
 The sorting functionality helps users organize loaded AAS shells by relevant properties.
 
@@ -130,7 +130,7 @@ Users can navigate large datasets faster and find relevant assets more easily.
 ---
 
 
-## 🔍 FR03 / FR.003 – Advanced Recursive Search
+## 🔍 [FR03 / FR.003 – Advanced Recursive Search](PROJECT/CRS.md#fr03)
 
 The search functionality was extended to search recursively through AAS structures.
 
@@ -153,7 +153,7 @@ Users can find relevant data even if it is deeply nested inside an AAS.
 
 ---
 
-## 🏷️ FR04 / FR.004 – Digital Nameplate Integration
+## 🏷️ [FR04 / FR.004 – Digital Nameplate Integration](PROJECT/CRS.md#fr04)
 
 The Digital Nameplate generator was integrated into the Digital Nameplate plugin.
 
@@ -178,7 +178,7 @@ Frontend: <img width="434" height="703" alt="image" src="https://github.com/user
 
 ---
 
-## 🔗 FR05 / FR.005 – API Enhancements & Metadata-Based Filtering
+## 🔗 [FR05 / FR.005 – API Enhancements & Metadata-Based Filtering](PROJECT/CRS.md#fr05)
 
 The API was extended to provide additional administrative metadata and make this information usable in the frontend.
 
@@ -214,7 +214,7 @@ This improves both API data access and frontend usability.
 
 ---
 
-## 🎨 FR06 / FR.006 – Improved UI Labeling
+## 🎨 [FR06 / FR.006 – Improved UI Labeling](PROJECT/CRS.md#fr06)
 
 Boolean values in operation submodules are now displayed more clearly.
 
